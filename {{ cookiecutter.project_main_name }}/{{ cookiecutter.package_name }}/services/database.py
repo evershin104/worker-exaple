@@ -9,8 +9,8 @@ from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine, async_sess
 from sqlalchemy import select, update
 from sqlalchemy.orm import DeclarativeBase
 
-from worker_example.models import Task, TaskMetadata, TaskStatus, Base
-from worker_example.settings import DatabaseConfig
+from {{ cookiecutter.package_name }}.models import Task, TaskMetadata, TaskStatus, Base
+from {{ cookiecutter.package_name }}.settings import DatabaseConfig
 
 
 class DatabaseService:

@@ -7,8 +7,8 @@ from sqlalchemy.ext.asyncio import create_async_engine
 from alembic import context
 
 # Импортируем модели и настройки
-from worker_example.models import Base
-from worker_example.settings import DatabaseConfig
+from {{ cookiecutter.package_name }}.models import Base
+from {{ cookiecutter.package_name }}.settings import DatabaseConfig
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

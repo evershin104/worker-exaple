@@ -6,8 +6,8 @@ from uuid import UUID
 from faststream import BaseMiddleware
 from loguru import logger
 
-from worker_example.services.database import DatabaseService
-from worker_example.models import TaskStatus
+from {{ cookiecutter.package_name }}.services.database import DatabaseService
+from {{ cookiecutter.package_name }}.models import TaskStatus
 
 
 class LoggingMiddleware(BaseMiddleware):

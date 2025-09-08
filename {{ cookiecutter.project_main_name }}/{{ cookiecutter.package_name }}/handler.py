@@ -2,9 +2,9 @@ from time import sleep
 
 from faststream.rabbit import RabbitBroker
 from faststream import FastStream, ContextRepo, Logger
-from worker_example.settings import RabbitBrokerConfig
-from worker_example.schema import Payload
-from worker_example.middlewares import LoggingMiddleware
+from {{ cookiecutter.package_name }}.settings import RabbitBrokerConfig
+from {{ cookiecutter.package_name }}.schema import Payload
+from {{ cookiecutter.package_name }}.middlewares import LoggingMiddleware
 
 
 broker = RabbitBroker(
