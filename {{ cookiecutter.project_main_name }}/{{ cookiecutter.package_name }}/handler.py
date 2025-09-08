@@ -13,7 +13,7 @@ broker = RabbitBroker(
 
 app = FastStream(broker)
 
-# faststream run worker_example.handler:app --reload --env .env
+# faststream run {{ cookiecutter.package_name }}example.handler:app --reload --env .env
 
 
 @app.on_startup
@@ -27,11 +27,11 @@ async def setup(context: ContextRepo, env: str = ".env"):
 @app.after_startup
 async def log_startup(logger: Logger):
     # from uuid import uuid4
-    # await broker.publish({"task_id": uuid4(), "triggered_by": uuid4()}, "example_worker_queue")
+    # await broker.publish({"task_id": uuid4(), "triggered_by": uuid4()}, "{{ cookiecutter.package_name }}_queue")
     logger.info("Worker started")
 
 
-@broker.subscriber("example_worker_queue", retry=3)
+@broker.subscriber("{{ cookiecutter.package_name }}_queue", retry=3)
 async def handle_example_queue(message: Payload) -> None:
     print(f"Processing task: {message.task_id}")
 

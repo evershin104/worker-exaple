@@ -1,5 +1,5 @@
 """
-Модели базы данных для worker-example
+Модели базы данных для {{ cookiecutter.package_name }}
 """
 from uuid import uuid4
 

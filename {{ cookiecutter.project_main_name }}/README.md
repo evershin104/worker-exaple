@@ -14,7 +14,7 @@ cp env.example .env
 docker-compose up -d
 
 # Просмотр логов
-docker-compose logs -f worker_example
+docker-compose logs -f {{ cookiecutter.package_name }}
 
 # Остановка
 docker-compose down
@@ -30,7 +30,7 @@ poetry install
 poetry run alembic upgrade head
 
 # Запуск воркера
-poetry run faststream run worker_example.handler:app --reload --env .env
+poetry run faststream run {{ cookiecutter.package_name }}.handler:app --reload --env .env
 ```
 
 ## Сервисы
@@ -48,7 +48,7 @@ poetry run faststream run worker_example.handler:app --reload --env .env
 
 ```bash
 # PostgreSQL
-POSTGRES_DB=worker_example
+POSTGRES_DB={{ cookiecutter.package_name }}
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=password
 POSTGRES_HOST=localhost

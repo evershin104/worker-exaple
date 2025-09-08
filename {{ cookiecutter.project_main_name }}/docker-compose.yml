@@ -31,10 +31,10 @@ services:
       timeout: 5s
       retries: 5
 
-  worker_example:
+  {{ cookiecutter.package_name }}:
     build: .
     environment:
-      POSTGRES_DB: ${POSTGRES_DB:-worker_example}
+      POSTGRES_DB: ${POSTGRES_DB:-{{ cookiecutter.package_name }}}
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password}
       POSTGRES_HOST: postgres

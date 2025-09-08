@@ -22,7 +22,7 @@ class RabbitBrokerConfig(BaseSettings):
 
 
 class DatabaseConfig(BaseSettings):
-    POSTGRES_DB: Optional[str] = os.getenv("POSTGRES_DB", "worker_example")
+    POSTGRES_DB: Optional[str] = os.getenv("POSTGRES_DB", "{{ cookiecutter.package_name }}")
     POSTGRES_USER: Optional[str] = os.getenv("POSTGRES_USER", "postgres")
     POSTGRES_PASSWORD: Optional[str] = os.getenv("POSTGRES_PASSWORD", "password")
     POSTGRES_PORT: Optional[str] = os.getenv("POSTGRES_PORT", "5432")
