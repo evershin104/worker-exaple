@@ -1,6 +1,6 @@
 {
-    "project_name": "FastStream Worker",
-    "project_main_name": "{{ cookiecutter.project_slug.replace(' ', '-') }}",
+    "project_name": "faststream-worker",
+    "project_main_name": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-').replace('_', '-') }}",
     "package_name": "{{ cookiecutter.project_slug.replace('-', '_') }}"
 }
